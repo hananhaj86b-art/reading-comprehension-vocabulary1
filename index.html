@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>המסע של דנה - הבנת הנקרא (רמה B2)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f4f6;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #2563eb;
+            background-color: #eff6ff;
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+        .location-tag {
+            font-size: 0.8rem;
+            color: #6b7280;
+            background-color: #f3f4f6;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-right: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        .quiz-option {
+            transition: all 0.2s ease;
+        }
+        .quiz-option:hover:not(:disabled) {
+            background-color: #e5e7eb;
+            transform: translateY(-2px);
+        }
+        .quiz-option.selected.correct {
+            background-color: #d1fae5;
+            border-color: #10b981;
+            color: #065f46;
+        }
+        .quiz-option.selected.wrong {
+            background-color: #fee2e2;
+            border-color: #ef4444;
+            color: #991b1b;
+        }
+        .quiz-option:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .rationale {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .rationale.show {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .hint-text {
+            display: none;
+        }
+        .hint-text.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <header class="relative text-center mb-10 pt-6 sm:pt-0">
+            <!-- לוגו בצד שמאל -->
+            <img src="https://www.dropbox.com/scl/fi/n99ekuziwuwo0gw6ayyz4/1c81ae1c-2456-410c-999a-36e725a9728b.png?rlkey=63ta8ngn55sdabt6mfdbyt10z&st=70tr43s5&raw=1" alt="סמל" class="absolute left-0 top-0 w-16 sm:w-24 object-contain">
+            
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-blue-700 mb-2">המסע של דנה</h1>
+            <p class="text-lg text-gray-600">תרגול אוצר מילים מתוך הקשר (רמת B2)</p>
+        </header>
+
+        <!-- Story Section -->
+        <section class="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-10">
+            <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-200 pb-2 mb-4 flex items-center">
+                <i class="fas fa-book-reader text-blue-500 ml-3"></i> קראו את הסיפור הבא:
+            </h2>
+            <div class="text-lg leading-relaxed space-y-6">
+                <div class="p-4 border-r-4 border-blue-100 bg-gray-50">
+                    <span class="text-xs font-bold text-gray-400 block mb-1">פסקה 1</span>
+                    <p>
+                        (שורה 1) נסיעת העסקים הגורלית של דנה יצאה לדרך מ<span class="highlight">נתב”ג</span>. בעודה ממתינה לטיסתה באזור ה<span class="highlight">בִּלּוּיִים</span>
+                        (שורה 2) ההומה של שדה התעופה, היא ניסתה להימנע מ<span class="highlight">חֹסֶר מַעֲשֶׂה</span> ומהתבוננות באנשים ש<span class="highlight">מְשׁוֹטְטִים</span> בחוסר 
+                        (שורה 3) תכלית בין החנויות. יעדה היה כנס <span class="highlight">טֶקְסְטִיל</span> ו<span class="highlight">סִיטוֹנָאוּת</span> בינלאומי שהתקיים באזור <span class="highlight">הֲרָרִי</span> ומבודד 
+                        (שורה 4) באירופה. מטרתה המרכזית הייתה לאתר <span class="highlight">אָרִיג</span> חדשני ויוצא דופן, אשר ישמש בסיס לקולקציית 
+                        (שורה 5) ה<span class="highlight">תַּחְפּוֹשׂוֹת</span> התיאטרליות וה<span class="highlight">חֲלִיפָה</span> המחויטת שהיא שוקדת על עיצובן בימים אלה.
+                    </p>
+                </div>
+
+                <div class="p-4 border-r-4 border-blue-100 bg-gray-50">
+                    <span class="text-xs font-bold text-gray-400 block mb-1">פסקה 2</span>
+                    <p>
+                        (שורה 1) שגרת ההמתנה הופרה באחת כאשר התבוננה ב<span class="highlight">מָסַךְ הַמַּחְשֵׁב</span> המרכזי וקפאה ב<span class="highlight">הֶלֶם</span> לנוכח ההודעה כי 
+                        (שורה 2) טיסתה נדחתה לזמן בלתי ידוע. מיד נוצר <span class="highlight">חֹסֶר וַדָּאוּת</span> מורט עצבים בטרמינל, והחלה <span class="highlight">נְהִירָה</span> המונית ורועשת 
+                        (שורה 3) של נוסעים מתוסכלים לעבר דלפקי השירות. פקיד קרקע אחד, שככל הנראה קרס תחת העומס, 
+                        (שורה 4) הגיב בצורה אגרסיבית והיה <span class="highlight">גַּס רוּחַ</span> כלפי הקהל. למרבה המזל, מרבית אנשי הצוות פעלו ב<span class="highlight">זְרִיזוּת</span> 
+                        (שורה 5) וביעילות כדי להכיל את הסיטואציה ולמנוע <span class="highlight">הַסְלָמָה</span> מיותרת של הזעם שהצטבר בקרב הנוסעים.
+                    </p>
+                </div>
+
+                <div class="p-4 border-r-4 border-blue-100 bg-gray-50">
+                    <span class="text-xs font-bold text-gray-400 block mb-1">פסקה 3</span>
+                    <p>
+                        (שורה 1) בשלב זה, דנה ניצבה בפני <span class="highlight">דִּילֵמָה</span> כבדת משקל: האם לוותר על נסיעת העסקים ולשוב על עקבותיה, 
+                        (שורה 2) או שמא להמתין בסבלנות ולהתמודד עם השיבוש. <span class="highlight">לְעֻמַּת זֹאת</span>, קול פנימי הזכיר לה שוויתור כעת יהווה 
+                        (שורה 3) <span class="highlight">הַחְמָצָה</span> מקצועית שלא תוכל לסלוח לעצמה עליה. היא מצאה <span class="highlight">נֶחָמָה</span> קלה ב<span class="highlight">זְלִילָה</span> חפוזה של פחמימות מנחמות 
+                        (שורה 4) מהקפיטריה הסמוכה, והזכירה לעצמה ש<span class="highlight">לְעִתִּים</span> קרובות, התפניות הפחות צפויות נושאות בחובן הזדמנויות.
+                    </p>
+                </div>
+
+                <div class="p-4 border-r-4 border-blue-100 bg-gray-50">
+                    <span class="text-xs font-bold text-gray-400 block mb-1">פסקה 4</span>
+                    <p>
+                        (שורה 1) כאשר הגיעה לבסוף למתחם הכנס באיחור ניכר, חזה התמלא ב<span class="highlight">גַּאֲוָה</span> על כך שלא נכנעה לייאוש. 
+                        (שורה 2) התמדתה השתלמה כשפגשה <span class="highlight">מֻמְחִית</span> עולמית לחומרי גלם, שהעניקה לה <span class="highlight">חֲוָיָה מוּחָשִׁית</span> ונדירה; 
+                        (שורה 3) דנה הורשתה <span class="highlight">לְמַשֵּׁשׁ</span> את פיתוחי הבדים האחרונים ולעמוד על טיבם מקרוב. המפגש הוביל לחתימה 
+                        (שורה 4) על <span class="highlight">חוֹזֶה</span> בלעדי. היא הפנימה שכדי <span class="highlight">לְהִתְחָרוֹת</span> בהצלחה בשוק ה<span class="highlight">יֻקְרָה</span> התובעני, נדרשת <span class="highlight">מְיֻמָּנוּת</span> יוצאת 
+                        (שורה 5) דופן. אין די ב<span class="highlight">חִקּוּי</span> העיצובים של מתחריה; שאיפתה היא לבסס מותג <span class="highlight">עֲנָקִי</span> המכתיב את הטון. 
+                        (שורה 6) המסע המטלטל הפך עבורה לאבן דרך של <span class="highlight">הַגְשָׁמָה עַצְמִית</span> ושל <span class="highlight">צְמִיחָה</span> אינטלקטואלית ומסחרית כאחד.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section class="bg-white rounded-xl shadow-lg p-6 sm:p-8">
+            <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-green-200 pb-2 mb-6 flex items-center">
+                <i class="fas fa-question-circle text-green-500 ml-3"></i> שאלון הבנת הנקרא
+            </h2>
+            
+            <div id="quiz-container" class="space-y-8">
+                <!-- Injected via JavaScript -->
+            </div>
+
+            <div id="results-container" class="mt-8 p-6 bg-blue-50 rounded-lg text-center hidden">
+                <h3 class="text-2xl font-bold text-blue-800 mb-2">סיימתם את המבדק!</h3>
+                <p class="text-lg mb-4">הציון שלכם: <span id="score-display" class="font-bold text-2xl">0</span> מתוך 10</p>
+                <button onclick="resetQuiz()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                    נסו שוב
+                </button>
+            </div>
+        </section>
+        
+        <footer class="text-center text-gray-500 mt-8 text-sm">
+            נוצר עבור תרגול אוצר מילים שאלון 14271 - רמת B2
+        </footer>
+    </div>
+
+    <script>
+        const questionsData = [
+            {
+                id: 1,
+                location: "פסקה 2, שורה 2",
+                question: "בטקסט מתוארת 'נהירה המונית ורועשת'. מהי המשמעות המדויקת של המונח <span class='highlight'>נְהִירָה</span> בהקשר של הסיטואציה שנוצרה?",
+                options: [
+                    { text: "תנועה מאסיבית של אנשים רבים לכיוון אחד, מתוך דחף פתאומי או צורך משותף למצוא פתרון.", isCorrect: true, rationale: "המילה נובעת מהשורש נ.ה.ר ומשולה לזרימת מי נהר – תנועה המונית, בלתי נשלטת ורבת עוצמה של קהל לעבר מוקד אחד." },
+                    { text: "תגובה פיזית של תקיפה אלימה כלפי נותני שירות במצבי לחץ קיצוניים שמתרחשים בשדות תעופה.", isCorrect: false, rationale: "המושג מתייחס לתנועת הקהל ממקום למקום, ולא מתאר פעולה של אלימות או תקיפה פיזית." },
+                    { text: "המתנה מאורגנת ושקטה בתורים מסודרים על מנת לקבל שירות מהיר ויעיל מצוות הקרקע.", isCorrect: false, rationale: "להיפך, נהירה בדרך כלל מאופיינת בתנועה דוחקת שאינה מסודרת, במיוחד במצבי חוסר ודאות." },
+                    { text: "התפזרות הדרגתית של אנשים לכל עבר במטרה להימנע מהתקהלות ומצפיפות באזור הטרמינל.", isCorrect: false, rationale: "ההתפזרות היא פעולה הפוכה לנהירה, שהיא התרכזות ותנועה לכיוון יעד משותף." }
+                ],
+                hint: "חשבו על מילת השורש 'נהר'. כיצד זורמים מי הנהר כשהם פורצים?"
+            },
+            {
+                id: 2,
+                location: "פסקה 3, שורה 3",
+                question: "מדוע הגיעה דנה למסקנה שוויתור על הנסיעה יהווה <span class='highlight'>הַחְמָצָה</span> מקצועית עבורה?",
+                options: [
+                    { text: "משום שוויתור משמעו אובדן של הזדמנות קרדינלית שהייתה עשויה לקדם את העסק שלה באופן משמעותי.", isCorrect: true, rationale: "החמצה מתארת החטאה או פספוס של יעד חיוני. בהקשר של דנה, המשמעות היא אי-מימוש פוטנציאל ההתפתחות העסקית שלה." },
+                    { text: "כי הדבר יוביל בהכרח לפשיטת רגל של החברה שלה בגלל אובדן ההשקעה הכספית הגדולה בכרטיסי הטיסה.", isCorrect: false, rationale: "ההחמצה קשורה להזדמנות העסקית ולא לאיום מיידי של פשיטת רגל בגלל הפסד כספי טכני." },
+                    { text: "משום שהיא הבטיחה ללקוחות הקבועים שלה שתביא בדים חדשים והיא אינה נוהגת להפר הבטחות.", isCorrect: false, rationale: "הטקסט אינו מתייחס להתחייבויות קודמות ללקוחות ספציפיים, אלא לפיתוח הקולקציה שלה עצמה." },
+                    { text: "כיוון שוויתור יעניק יתרון לא הוגן למתחרים שלה שישמחו על כך שלא הגיעה לכנס החשוב.", isCorrect: false, rationale: "למרות שהיא רוצה להתחרות, תחושת ההחמצה היא פנימית ואפקטיבית עבורה, ולא מתמקדת בתגובת המתחרים." }
+                ],
+                hint: "המונח מתייחס למצב שבו אדם מפספס דבר מה רצוי שעמד בהישג ידו."
+            },
+            {
+                id: 3,
+                location: "פסקה 2, שורה 1",
+                question: "דנה 'קפאה ב<span class='highlight'>הֶלֶם</span>' למראה ההודעה על המסך. איזו מן החלופות מתארת מצב זה בצורה הטובה ביותר?",
+                options: [
+                    { text: "תגובה רגשית ופיזיולוגית של תדהמה עמוקה וזעזוע לנוכח אירוע פתאומי ומשבש.", isCorrect: true, rationale: "מצב של הלם מתאפיין בקיפאון זמני של תהליכי החשיבה והתגובה, כפי שקרה לדנה כאשר נתקלה במידע הלא צפוי שמערער את תוכניותיה." },
+                    { text: "תחושה של אדישות, השלמה וקבלה מיידית של המציאות החדשה שנכפתה עליה.", isCorrect: false, rationale: "אדם הנמצא בהלם אינו אדיש, אלא המום מעוצמת האירוע שמעכב את התקדמותו." },
+                    { text: "פרץ של כעס בלתי נשלט המלווה בצעקות לא סבירות ובאובדן עשתונות מוחלט כלפי הסביבה.", isCorrect: false, rationale: "הטקסט מציין שהיא 'קפאה', כלומר התגובה הייתה מופנמת ומשתקת ולא התפרצות מוחצנת של זעם." },
+                    { text: "מצב של בלבול קל וקושי זמני בהבנת ההוראות או השפה הכתובות על המסך המרכזי.", isCorrect: false, rationale: "הלם מעיד על זעזוע חזק ומהותי בשל משמעות ההודעה, ולא על קשיי הבנה טכניים." }
+                ],
+                hint: "זהו מצב אקוטי שמופיע בתגובה לבשורה מפתיעה או לאירוע טראומטי, הגורם להקפאה של החושים."
+            },
+            {
+                id: 4,
+                location: "פסקה 2, שורה 5",
+                question: "אנשי הצוות פעלו כדי למנוע <span class='highlight'>הַסְלָמָה</span> מיותרת של הזעם. למה הכוונה במונח זה בדינמיקה הקבוצתית?",
+                options: [
+                    { text: "תהליך הדרגתי שבו מצב מתוח ממילא הולך ומחריף, מקצין ועלול לצאת מכלל שליטה.", isCorrect: true, rationale: "מקור המילה ב'סולם'. משמעותה היא עליית מדרגה בחומרת המצב, במקרה זה - עלייה מסוכנת ברמות הכעס והתסכול של הנוסעים." },
+                    { text: "תהליך של מיתון רגשות שליליים, פישור והרגעת הרוחות באמצעות משא ומתן אפקטיבי.", isCorrect: false, rationale: "זהו תיאור של מניעת ההסלמה, אך 'הסלמה' כשלעצמה מתארת את תהליך ההחמרה השלילי." },
+                    { text: "טיפוס פיזי אל קומה גבוהה או בטוחה יותר בטרמינל כדי לחלץ נוסעים מהאזור הצפוף והעמוס.", isCorrect: false, rationale: "למרות השורש ס.ל.מ, המונח אינו מתאר עלייה פיזית, אלא החרפה של מצב סוציאלי או פוליטי." },
+                    { text: "התעלמות שיטתית ומכוונת מתלונות הלקוחות מתוך תקווה אסטרטגית שהכעס ידעך מעצמו.", isCorrect: false, rationale: "מניעת הסלמה דורשת מעורבות אקטיבית, כפי שעשו אנשי הצוות, ולא התעלמות גרידא." }
+                ],
+                hint: "המילה שואבת את מקורה מכלי שמשמש לעלייה וטיפוס שלבים."
+            },
+            {
+                id: 5,
+                location: "פסקה 1, שורה 2",
+                question: "דנה ניסתה להימנע מ<span class='highlight'>חֹסֶר מַעֲשֶׂה</span> במהלך ההמתנה בשדה התעופה. ממה בדיוק היא ניסתה להימנע?",
+                options: [
+                    { text: "שקיעה למצב של בטלה, חוסר תכלית והיעדר כל פעילות יצרנית בזמן הפנוי שנכפה עליה.", isCorrect: true, rationale: "הביטוי מתייחס לריקנות של פעולה. דנה, בהיותה אשת עסקים אקטיבית, העדיפה להיות פרודוקטיבית ולא להישאב לבטלה הכללית שמסביבה." },
+                    { text: "ביצוע עבודה אינטנסיבית ומאומצת מדי שהייתה עלולה להתיש אותה לפני טיסה ארוכה ומעייפת.", isCorrect: false, rationale: "המילה 'חוסר' מעידה בדיוק על ההפך: מצב שבו אין שום עשייה." },
+                    { text: "מעורבות בשיחות חולין מיותרות עם נוסעים זרים שעלולות היו לעכב את התקדמותה ליעד.", isCorrect: false, rationale: "אף על פי ששיחות חולין עשויות להיות חסרות תכלית, המונח מתייחס להיעדר מוחלט של עיסוק." },
+                    { text: "התמודדות עם מחסור אובייקטיבי במשאבים כלכליים שנדרשו לה לשהות הארוכה בשדה התעופה.", isCorrect: false, rationale: "המושג אינו מתאר מצב אקונומי של מחסור בכסף, אלא מתייחס לאופן ניצול הזמן." }
+                ],
+                hint: "קראו את המושג מילולית: מצב שבו יש 'חוסר' של 'מעשים'."
+            },
+            {
+                id: 6,
+                location: "פסקה 4, שורה 2",
+                question: "המומחית העניקה לדנה <span class='highlight'>חֲוָיָה מוּחָשִׁית</span> באמצעות פיתוחי הבדים. איזה מן התיאורים מתאים לאפיין חוויה זו?",
+                options: [
+                    { text: "התנסות קונקרטית ואותנטית הניתנת לקליטה באמצעות החושים הפיזיים (כגון חוש המישוש), בניגוד ללמידה תיאורטית.", isCorrect: true, rationale: "'מוחשי' נגזר מהמילה 'חוש'. החוויה של דנה הייתה ממשית משום שהתאפשר לה לבחון ולמשש את הבדים החומריים במו ידיה." },
+                    { text: "אירוע רוחני ורגשי מרומם שמעשיר את נפש האדם אך אינו קשור כלל לעולם הפיזי ולחומרים גשמיים.", isCorrect: false, rationale: "חוויה כזו מתוארת כחוויה רוחנית או מופשטת, שהיא ההפך מחוויה מוחשית הקשורה לחומר." },
+                    { text: "הצגה תיאורטית ומעמיקה של נתונים טכניים יבשים באמצעות שקפים וגרפים סטטיסטיים על צג המחשב.", isCorrect: false, rationale: "למרות שיש כאן שימוש בחוש הראייה, מדובר בהעברת מידע תיאורטי ולא בחוויה פיזית וחומרית של האובייקט (הבד)." },
+                    { text: "חוויה דמיונית ווירטואלית שמתבצעת אך ורק דרך סימולציה ממוחשבת מורכבת של מציאות רבודה.", isCorrect: false, rationale: "חוויות וירטואליות נועדו לדמות מציאות, אך הן אינן מוחשיות במובן הפיזי האמיתי שבו האדם נוגע במוצר ממשי." }
+                ],
+                hint: "איזה שורש מסתתר במילה, הקשור לדרך שבה אנו קולטים מידע מהעולם הפיזי?"
+            },
+            {
+                id: 7,
+                location: "פסקה 3, שורה 1",
+                question: "כשהטיסה נדחתה, דנה ניצבה בפני <span class='highlight'>דִּילֵמָה</span> כבדת משקל. מהי מהות הדילמה שלה על פי המתואר?",
+                options: [
+                    { text: "קונפליקט פנימי מורכב המחייב הכרעה קשה בין שתי חלופות סבירות: חזרה הביתה מול המתנה מתישה.", isCorrect: true, rationale: "דילמה היא התלבטות בין שתי אפשרויות התנהגות או פעולה, שלעיתים שתיהן כרוכות בקושי, בסיכון או בויתור פוטנציאלי." },
+                    { text: "החלטה טכנית ופשוטה הנוגעת למציאת המסלול המהיר והיעיל ביותר כדי לצאת בבטחה משדה התעופה.", isCorrect: false, rationale: "ההחלטה מתוארת בטקסט כ'כבדת משקל' הדורשת קול פנימי, כלומר מדובר בהכרעה מהותית ולא בהתמצאות מרחבית פשוטה." },
+                    { text: "קונפליקט חיצוני ואלים בינה לבין הפקיד גס הרוח שעבד בדלפק המודיעין המרכזי.", isCorrect: false, rationale: "דילמה מתייחסת להתלבטות מחשבתית ופנימית של האדם בבואו לקבל החלטה, ולא לסכסוך בינאישי חיצוני." },
+                    { text: "פסק דין חותך וחד-משמעי שהיא נאלצה לקבל ללא עוררין מחברת התעופה בעקבות נסיבות מזג האוויר.", isCorrect: false, rationale: "בדילמה מעורבת בחירה אקטיבית של האדם, בעוד שפסק דין מצביע על קבלה פאסיבית של גזירה חיצונית." }
+                ],
+                hint: "זהו מושג לועזי המציין מצב של 'להיות קרוע' בין שתי דרכי פעולה אפשריות שאינן אידיאליות."
+            },
+            {
+                id: 8,
+                location: "פסקה 4, שורה 4",
+                question: "דנה מבינה שנדרשת מיומנות רבה כדי להתחרות בשוק ה<span class='highlight'>יֻקְרָה</span>. מה מאפיין באופן מובהק שוק מסוג זה?",
+                options: [
+                    { text: "פלח שוק אקסקלוסיבי המתאפיין בסטנדרטים גבוהים במיוחד של איכות, מחירים גבוהים וסמלי סטטוס חברתי.", isCorrect: true, rationale: "המונח מתייחס למוצרי עילית שנועדו להקרין סטטוס ואיכות חסרת פשרות, ולכן התחרות בהם קשה יותר ותלויה בייחודיות." },
+                    { text: "זירת מסחר דינמית המתמקדת בייצור המוני, שיווק אגרסיבי ומכירה בסיטונאות לקהל הרחב ביותר האפשרי.", isCorrect: false, rationale: "ייצור המוני ופנייה לקהל רחב מאפיינים שווקים עממיים ומוצרי צריכה בסיסיים, אשר מנוגדים בהגדרתם ליוקרה ובלעדיות." },
+                    { text: "שוק מקומי ונגיש המתאפיין במחירי רצפה, מבצעים תכופים ותחרות חופשית ללא רגולציה מוקפדת.", isCorrect: false, rationale: "מוצרי יוקרה לעולם אינם מתהדרים במחירי רצפה או נגישות קלה לכולם." },
+                    { text: "מערכת מסחרית גלובלית המבוססת אך ורק על ייבוא כבד של מוצרי בסיס זולים מיבשות מתפתחות אחרות.", isCorrect: false, rationale: "הטקסט מדגיש שדנה מחפשת בדי איכות ולא תסתפק בחיקוי, דבר המעיד על הימנעות ממוצרי בסיס זולים." }
+                ],
+                hint: "איזה סוג של מוצרים מיועדים למעמד סוציו-אקונומי גבוה המחפש איכות וייחודיות ללא פשרות?"
+            },
+            {
+                id: 9,
+                location: "פסקה 2, שורה 4",
+                question: "כיצד ניתן לאפיין בצורה המדויקת ביותר את ההתנהגות של הפקיד שתואר בטקסט כ<span class='highlight'>גַּס רוּחַ</span>?",
+                options: [
+                    { text: "התנהגות בוטה, חסרת עידון ונטולת נימוס בסיסי, אשר נובעת פעמים רבות מקשיי התמודדות עם מצבי לחץ ועומס.", isCorrect: true, rationale: "גסות רוח (ההפך מעדינות רוח) מבטאת חספוס, חוצפה והיעדר טאקט בפנייה לאנשים, במיוחד בסיטואציות של שירות לקוחות מתוח." },
+                    { text: "התנהגות שקטה ומופנמת בקיצוניות המעידה על חוסר ביטחון תהומי מול קהל גדול ודורשני של לקוחות.", isCorrect: false, rationale: "אדם מופנם אינו בהכרח גס רוח. גסות רוח מתבטאת בדרך כלל באופן אקטיבי ופוגעני כלפי הזולת." },
+                    { text: "עבודה אדמיניסטרטיבית מהירה ומדויקת להפליא תוך התעלמות מוחלטת והיעדר רגש ביחסי האנוש מול הקהל.", isCorrect: false, rationale: "אמנם פקיד כזה אינו נעים, אך המילה מתארת לרוב אגרסיביות ויחס משפיל, כפי שמוזכר בטקסט ('הגיב בצורה אגרסיבית')." },
+                    { text: "סגנון דיבור מתוחכם וגבוה מדי, הגורם באופן מכוון ללקוחות פשוטים להרגיש נחיתות אינטלקטואלית מולו.", isCorrect: false, rationale: "גסות רוח מאופיינת דווקא בהיעדר תחכום ועידון, ולא בשימוש בשפה אקדמית או מליצית במתכוון." }
+                ],
+                hint: "חשבו על המושג 'רוח גסה' בניגוד ל'רוח עדינה' - מה יהיה סגנון הדיבור או הפעולה של אדם כזה?"
+            },
+            {
+                id: 10,
+                location: "פסקה 4, שורה 6",
+                question: "בסיום הטקסט מוזכר כי המסע היה אבן דרך של <span class='highlight'>הַגְשָׁמָה עַצְמִית</span> עבור דנה. כיצד באה הגשמה זו לידי ביטוי מבחינתה?",
+                options: [
+                    { text: "על ידי מימוש הפוטנציאל האישי והמקצועי שלה, והפיכת שאיפותיה, מטרותיה וכישוריה העיצוביים למציאות מבוססת ומצליחה.", isCorrect: true, rationale: "המונח מתאר את השלב העליון שבו אדם מוציא אל הפועל את יכולותיו הייחודיות, כפי שדנה עשתה כשחתמה על החוזה והתקדמה אל עבר ייסוד מותג עצמאי משלה." },
+                    { text: "באמצעות ויתור מודע, בוגר ושקול על שאיפותיה העסקיות המקוריות למען בניית משפחה וניהול חיים שלווים באזור כפרי.", isCorrect: false, rationale: "הגשמה עצמית בטקסט מתייחסת ישירות להתפתחותה כאשת עסקים, כפי שעולה מחתימת החוזה ורצונה לבסס מותג בינלאומי." },
+                    { text: "דרך היכולת האלטרואיסטית שלה לסייע למעצבים צעירים אחרים לפרוץ לשוק העבודה ולהקים חברות טקסטיל משלהם.", isCorrect: false, rationale: "המוקד של המונח והטקסט הוא על תהליך הצמיחה האישי והעצמאי של דנה, ולא על הקדשת חייה לפילנתרופיה מקצועית." },
+                    { text: "על ידי ציות עיוור ומוחלט לתכתיבים, לעצות ולחזון של המומחית הבינלאומית הבכירה שפגשה במקרה בכנס האירופאי.", isCorrect: false, rationale: "הגשמה עצמית מחייבת סוכנות (Agency) ואוטונומיה, ולא ביטול עצמי מוחלט בפני סמכות אחרת, בכירה ככל שתהיה." }
+                ],
+                hint: "שימו לב למילה 'הגשמה' שמשמעותה הפיכת דבר מה מופשט לגשמי (אמיתי), ולמילה 'עצמית'."
+            }
+        ];
+
+        let score = 0;
+        let answeredQuestions = 0;
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+
+            questionsData.forEach((q, index) => {
+                const shuffledOptions = shuffleArray([...q.options]);
+                
+                const questionHTML = `
+                    <div class="bg-gray-50 rounded-lg p-5 border border-gray-200" id="q-block-${index}">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-semibold text-gray-800 leading-snug">
+                                <span class="bg-blue-100 text-blue-800 rounded-full px-3 py-1 text-sm font-bold ml-2">${index + 1}</span>
+                                <span class="location-tag"><i class="fas fa-map-marker-alt ml-1"></i> ${q.location}</span><br class="sm:hidden">
+                                ${q.question}
+                            </h3>
+                            <button onclick="toggleHint(${index})" class="text-blue-500 hover:text-blue-700 text-sm flex-shrink-0 mr-4" title="רמז">
+                                <i class="fas fa-lightbulb"></i> רמז
+                            </button>
+                        </div>
+                        
+                        <div id="hint-${index}" class="hint-text bg-yellow-50 border border-yellow-200 text-yellow-800 px-4 py-2 rounded mb-4 text-sm">
+                            <i class="fas fa-info-circle ml-1"></i> ${q.hint}
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-3" id="options-container-${index}">
+                            ${shuffledOptions.map((opt, optIndex) => `
+                                <button onclick="selectOption(${index}, ${optIndex})" 
+                                        id="btn-${index}-${optIndex}"
+                                        data-correct="${opt.isCorrect}"
+                                        data-rationale="${opt.rationale}"
+                                        class="quiz-option w-full text-right p-4 border rounded-lg bg-white shadow-sm focus:outline-none">
+                                    ${opt.text}
+                                </button>
+                            `).join('')}
+                        </div>
+
+                        <div id="rationale-${index}" class="rationale mt-4 p-4 rounded-lg">
+                            <h4 class="font-bold mb-1 rationale-title"></h4>
+                            <p class="rationale-text"></p>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += questionHTML;
+            });
+        }
+
+        function toggleHint(index) {
+            const hintDiv = document.getElementById(`hint-${index}`);
+            hintDiv.classList.toggle('show');
+        }
+
+        function selectOption(qIndex, selectedOptIndex) {
+            const optionsContainer = document.getElementById(`options-container-${qIndex}`);
+            const buttons = optionsContainer.querySelectorAll('button');
+            const rationaleDiv = document.getElementById(`rationale-${qIndex}`);
+            const rationaleTitle = rationaleDiv.querySelector('.rationale-title');
+            const rationaleText = rationaleDiv.querySelector('.rationale-text');
+            
+            const clickedBtn = document.getElementById(`btn-${qIndex}-${selectedOptIndex}`);
+            const isCorrect = clickedBtn.getAttribute('data-correct') === 'true';
+            const rationale = clickedBtn.getAttribute('data-rationale');
+
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                if (btn.getAttribute('data-correct') === 'true') {
+                    btn.classList.add('border-green-500', 'bg-green-50');
+                    btn.innerHTML += ' <i class="fas fa-check text-green-600 float-left mt-1"></i>';
+                }
+            });
+
+            clickedBtn.classList.add('selected');
+            if (isCorrect) {
+                clickedBtn.classList.add('correct');
+                rationaleDiv.className = 'rationale show mt-4 p-4 rounded-lg bg-green-100 text-green-800 border border-green-300';
+                rationaleTitle.innerHTML = '<i class="fas fa-check-circle ml-1"></i> תשובה נכונה!';
+                score++;
+            } else {
+                clickedBtn.classList.add('wrong');
+                clickedBtn.innerHTML += ' <i class="fas fa-times text-red-600 float-left mt-1"></i>';
+                rationaleDiv.className = 'rationale show mt-4 p-4 rounded-lg bg-red-100 text-red-800 border border-red-300';
+                rationaleTitle.innerHTML = '<i class="fas fa-times-circle ml-1"></i> תשובה שגויה';
+            }
+
+            rationaleText.innerText = rationale;
+            
+            answeredQuestions++;
+            checkCompletion();
+        }
+
+        function checkCompletion() {
+            if (answeredQuestions === questionsData.length) {
+                const resultsContainer = document.getElementById('results-container');
+                const scoreDisplay = document.getElementById('score-display');
+                scoreDisplay.innerText = score;
+                resultsContainer.classList.remove('hidden');
+                setTimeout(() => { resultsContainer.scrollIntoView({ behavior: 'smooth' }); }, 500);
+            }
+        }
+
+        function resetQuiz() {
+            score = 0;
+            answeredQuestions = 0;
+            document.getElementById('results-container').classList.add('hidden');
+            renderQuiz();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.onload = renderQuiz;
+    </script>
+</body>
+</html>
